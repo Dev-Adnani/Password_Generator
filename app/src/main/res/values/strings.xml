@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Password Generator</string>
+    <string name="how_i_can_create_a_strong_password">How I Can Create A Strong Password Or Pin?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pin_generator">Pin Generator</string>
+    <string name="pin_length">Pin Length</string>
+    <string name="get_me_my_pin">Get Me My Pin</string>
+    <string name="your_password_is">Your Password Is</string>
+    <string name="random_pass">80Sxdi7@26#</string>
+    <string name="click_on_your_code_to_copy_it">Click On Your Password To Copy It</string>
+    <string name="password_generator">Password Generator</string>
+    <string name="password_length">Password Length</string>
+    <string name="include_special_characters">Include Special Characters</string>
+    <string name="include_numbers">Include Numbers</string>
+    <string name="include_lower_case_characters">Include Lower Case Characters</string>
+    <string name="include_upper_case_characters">Include Upper Case Characters</string>
+    <string name="get_me_my_new_password">Get Me New Password</string>
+    <string name="i_need_another_pin">Get Me Another Pin</string>
+    <string name="i_need_another_password">Get Me Another Password</string>
+</resources>
