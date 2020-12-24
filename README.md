@@ -54,6 +54,13 @@ These programs produce complex/strong passwords with combinations of numbers, up
 - The App Uses Fragment & Tab Layout So UI Is Smooth & Efficient 
 
 
+##  Code Inspector Review
+
+-  Code Review : <img alt="Password_Generator"  src="https://www.code-inspector.com/project/17259/score/svg"/>
+
+-  Code Grade : <img alt="Password_Generator"  src="https://www.code-inspector.com/project/17259/status/svg"/>
+
+
 ## :zap: Screenshots
 
   <img align="left" alt="Password_Generator"  src="https://imgur.com/skLTuiV.png">
