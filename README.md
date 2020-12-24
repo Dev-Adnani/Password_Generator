@@ -6,6 +6,7 @@ A password generator is a software tool that creates random or customized passwo
 
 These programs produce complex/strong passwords with combinations of numbers, uppercase and lowercase letters, and special characters such as braces, asterisks, slashes, etc.
 
+</br></br> 
 </br>  
 ## Is a Password Generator Safe?
 
