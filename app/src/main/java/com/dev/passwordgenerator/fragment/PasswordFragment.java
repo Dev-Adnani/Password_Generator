@@ -45,10 +45,10 @@ public class PasswordFragment extends Fragment {
         TextInputLayout textInputLayout = view.findViewById(R.id.til_password);
         Editable passLength = textInputLayout.getEditText().getText();
 
-        SwitchMaterial switchUpper = view.findViewById(R.id.switch_upper);
-        SwitchMaterial switchLower = view.findViewById(R.id.switch_lower);
-        SwitchMaterial switchSpecial = view.findViewById(R.id.switch_char);
-        SwitchMaterial switchNumber = view.findViewById(R.id.switch_number);
+        SwitchMaterial  switchUpper = view.findViewById(R.id.switch_upper);
+        SwitchMaterial  switchLower = view.findViewById(R.id.switch_lower);
+        SwitchMaterial  switchSpecial = view.findViewById(R.id.switch_char);
+        SwitchMaterial  switchNumber = view.findViewById(R.id.switch_number);
 
         String upCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String lowCase = "abcdefghijklmnopqrstuvwxyz";
@@ -61,46 +61,60 @@ public class PasswordFragment extends Fragment {
 
                 String mPass = "";
 
-                if (switchUpper.isChecked()) {
-                    mPass = mPass + upCase;
-                } else {
+                if (switchUpper.isChecked())
+                    {
+                        mPass = mPass + upCase;
+                    }
+                    else
+                    {
 
-                }
+                    }
 
-                if (switchLower.isChecked()) {
-                    mPass = mPass + lowCase;
-                } else {
+                    if (switchLower.isChecked())
+                    {
+                        mPass = mPass + lowCase;
+                    }
+                    else
+                    {
 
-                }
+                    }
 
-                if (switchSpecial.isChecked()) {
-                    mPass = mPass + special;
-                } else {
+                    if (switchSpecial.isChecked())
+                    {
+                        mPass = mPass + special;
+                    }
+                    else
+                    {
 
-                }
+                    }
 
-                if (switchNumber.isChecked()) {
-                    mPass = mPass + numbers;
-                } else {
+                    if (switchNumber.isChecked())
+                    {
+                        mPass = mPass + numbers;
+                    }
+                    else
+                    {
 
-                }
+                    }
 
                 String pass = String.valueOf(passLength);
 
                 if (TextUtils.isEmpty(pass)) {
                     Toasty.error(getActivity(), "Enter Digit Between 1 to 25", Toast.LENGTH_SHORT, true).show();
-                } else {
+                }
+                else {
                     int finalPassLength = Integer.parseInt(pass);
                     if (finalPassLength == 0 || finalPassLength > 25) {
                         Toasty.error(getActivity(), "Enter Digit Between 1 to 25", Toast.LENGTH_SHORT, true).show();
                     }
-
-                    if ((switchUpper.isChecked() && switchLower.isChecked() && switchSpecial.isChecked() && switchNumber.isChecked())) {
+                    else if (!(switchUpper.isChecked() || switchLower.isChecked() || switchSpecial.isChecked() || switchNumber.isChecked()))
+                    {
                         Toasty.warning(getActivity(), "Please Select Any Condition", Toast.LENGTH_SHORT, true).show();
-                    } else {
+                    }
+                    else {
                         Intent intent = new Intent(getActivity(), PasswordSuccessActivity.class);
                         intent.putExtra("mPassLength", finalPassLength);
-                        intent.putExtra("mPassword", mPass);
+                        intent.putExtra("mPassword",mPass);
                         startActivity(intent);
                     }
                 }
@@ -111,6 +125,8 @@ public class PasswordFragment extends Fragment {
 
         return view;
     }
+
+
 
 
 }
