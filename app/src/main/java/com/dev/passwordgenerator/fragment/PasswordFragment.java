@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +36,7 @@ public class PasswordFragment extends Fragment {
     }
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_password, container, false);
@@ -44,10 +46,57 @@ public class PasswordFragment extends Fragment {
         TextInputLayout textInputLayout = view.findViewById(R.id.til_password);
         Editable passLength = textInputLayout.getEditText().getText();
 
+        SwitchMaterial  switchUpper = view.findViewById(R.id.switch_upper);
+        SwitchMaterial  switchLower = view.findViewById(R.id.switch_lower);
+        SwitchMaterial  switchSpecial = view.findViewById(R.id.switch_char);
+        SwitchMaterial  switchNumber = view.findViewById(R.id.switch_number);
+
 
         btn_Pass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                String mPass = "";
+
+                if (switchUpper.isChecked())
+                    {
+                        String upCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                        mPass = mPass + upCase;
+                    }
+                    else
+                    {
+
+                    }
+
+                    if (switchLower.isChecked())
+                    {
+                        String lowCase = "abcdefghijklmnopqrstuvwxyz";
+                        mPass = mPass + lowCase;
+                    }
+                    else
+                    {
+
+                    }
+
+                    if (switchSpecial.isChecked())
+                    {
+                        String special = "~`!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?";
+                        mPass = mPass + special;
+                    }
+                    else
+                    {
+
+                    }
+
+                    if (switchNumber.isChecked())
+                    {
+                        String numbers = "0123456789";
+                        mPass = mPass + numbers;
+                    }
+                    else
+                    {
+
+                    }
 
                 String pass = String.valueOf(passLength);
 
@@ -57,24 +106,27 @@ public class PasswordFragment extends Fragment {
                 else {
                     int finalPassLength = Integer.parseInt(pass);
 
-                    if (finalPassLength == 0 ) {
+                    if (finalPassLength == 0) {
+                        Toasty.error(getActivity(), "Enter Digit Between 1 to 25", Toast.LENGTH_SHORT, true).show();
+                    } else if (finalPassLength > 25) {
                         Toasty.error(getActivity(), "Enter Digit Between 1 to 25", Toast.LENGTH_SHORT, true).show();
                     }
-                    else if( finalPassLength >25)
-                    {
-                        Toasty.error(getActivity(), "Enter Digit Between 1 to 25", Toast.LENGTH_SHORT, true).show();
-                    }
-                    else {
+                    else{
                         Intent intent = new Intent(getActivity(), PasswordSuccessActivity.class);
-                        intent.putExtra("PWDs", finalPassLength);
+                        intent.putExtra("mPassLength", finalPassLength);
+                        intent.putExtra("mPassword",mPass);
                         startActivity(intent);
                     }
                 }
+
+
             }
         });
 
         return view;
     }
+
+
 
 
 }

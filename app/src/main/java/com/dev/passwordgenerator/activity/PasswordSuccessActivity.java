@@ -18,10 +18,11 @@ import es.dmoral.toasty.Toasty;
 
 public class PasswordSuccessActivity extends AppCompatActivity {
 
-    private int pass;
+    private int passLength;
     TextView tvPassword;
-    private Button btnRegeneratePassword;
-    private String pwd;
+    private String setPass;
+    private String mPassword;
+    Button btnRegeneratePassword;
 
 
 
@@ -32,16 +33,14 @@ public class PasswordSuccessActivity extends AppCompatActivity {
 
         tvPassword = findViewById(R.id.tv_password);
         btnRegeneratePassword = findViewById(R.id.btn_regenerate_password);
-
-        pass = getIntent().getIntExtra("PWDs",2);
-
+        mPassword = getIntent().getStringExtra("mPassword");
+        passLength = getIntent().getIntExtra("mPassLength", 2);
 
         generatePassword();
-
-        newPassword();
+        regeneratePassword();
     }
 
-    private void newPassword()
+    private void regeneratePassword()
     {
         btnRegeneratePassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,8 +50,8 @@ public class PasswordSuccessActivity extends AppCompatActivity {
         });
     }
 
-    private void copyToBoard()
-    {
+
+    private void copyToBoard() {
         tvPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,25 +60,16 @@ public class PasswordSuccessActivity extends AppCompatActivity {
 
                 myClipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
 
-                myClip = ClipData.newPlainText("text", pwd);
+                myClip = ClipData.newPlainText("text", setPass);
                 myClipboard.setPrimaryClip(myClip);
                 Toasty.success(getApplicationContext(), "Copied To Clip Board", Toast.LENGTH_SHORT, true).show();
             }
         });
     }
 
-    private void generatePassword()
-    {
-
-        String upCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        String lowCase = "abcdefghijklmnopqrstuvwxyz";
-        String special = "~`!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?";
-        String numbers = "0123456789";
-
-        String finalPassword = upCase + lowCase + special + numbers;
-
-        pwd = RandomStringUtils.random(pass, finalPassword);
-        tvPassword.setText(pwd);
+    private void generatePassword() {
+        setPass = RandomStringUtils.random(passLength, mPassword);
+        tvPassword.setText(setPass);
         copyToBoard();
     }
 }
