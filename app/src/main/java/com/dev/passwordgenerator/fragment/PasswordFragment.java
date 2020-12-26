@@ -36,7 +36,6 @@ public class PasswordFragment extends Fragment {
     }
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_password, container, false);
@@ -51,6 +50,10 @@ public class PasswordFragment extends Fragment {
         SwitchMaterial  switchSpecial = view.findViewById(R.id.switch_char);
         SwitchMaterial  switchNumber = view.findViewById(R.id.switch_number);
 
+        String upCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String lowCase = "abcdefghijklmnopqrstuvwxyz";
+        String special = "~`!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?";
+        String numbers = "0123456789";
 
         btn_Pass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +63,6 @@ public class PasswordFragment extends Fragment {
 
                 if (switchUpper.isChecked())
                     {
-                        String upCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
                         mPass = mPass + upCase;
                     }
                     else
@@ -70,7 +72,6 @@ public class PasswordFragment extends Fragment {
 
                     if (switchLower.isChecked())
                     {
-                        String lowCase = "abcdefghijklmnopqrstuvwxyz";
                         mPass = mPass + lowCase;
                     }
                     else
@@ -80,7 +81,6 @@ public class PasswordFragment extends Fragment {
 
                     if (switchSpecial.isChecked())
                     {
-                        String special = "~`!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?";
                         mPass = mPass + special;
                     }
                     else
@@ -90,7 +90,6 @@ public class PasswordFragment extends Fragment {
 
                     if (switchNumber.isChecked())
                     {
-                        String numbers = "0123456789";
                         mPass = mPass + numbers;
                     }
                     else
@@ -105,13 +104,14 @@ public class PasswordFragment extends Fragment {
                 }
                 else {
                     int finalPassLength = Integer.parseInt(pass);
-
-                    if (finalPassLength == 0) {
-                        Toasty.error(getActivity(), "Enter Digit Between 1 to 25", Toast.LENGTH_SHORT, true).show();
-                    } else if (finalPassLength > 25) {
+                    if (finalPassLength == 0 || finalPassLength > 25) {
                         Toasty.error(getActivity(), "Enter Digit Between 1 to 25", Toast.LENGTH_SHORT, true).show();
                     }
-                    else{
+                   else if (!(switchUpper.isChecked() && switchLower.isChecked() && switchSpecial.isChecked() && switchNumber.isChecked()))
+                    {
+                        Toasty.warning(getActivity(), "Please Select Any Condition", Toast.LENGTH_SHORT, true).show();
+                    }
+                    else {
                         Intent intent = new Intent(getActivity(), PasswordSuccessActivity.class);
                         intent.putExtra("mPassLength", finalPassLength);
                         intent.putExtra("mPassword",mPass);
