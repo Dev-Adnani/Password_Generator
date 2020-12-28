@@ -69,7 +69,6 @@ These programs produce complex/strong passwords with combinations of numbers, up
 ## :zap: Screenshots
 
   <img align="left" alt="Password_Generator"  src="https://i.imgur.com/qHGN6er.png">
-  <img align="left" alt="Password_Generator"  src="https://imgur.com/CtKFnPM.png">
   <img align="left" alt="Password_Generator"  src="https://imgur.com/rr6UAd4.png">
   <img align="left" alt="Password_Generator"  src="https://imgur.com/I5MSH3m.png">
   <img align="left" alt="Password_Generator"  src="https://imgur.com/EuOjdCE.png">
