@@ -39,6 +39,13 @@ These programs produce complex/strong passwords with combinations of numbers, up
 - App does not required Internet Connection so you can create PIN(s) and Passwords anytime and anywhere.
 - Also you don't need to give any access to app and as it does not use internet connection. The app is absolutely safe.
 
+- The App Uses Fragment & Tab Layout So UI Is Smooth & Efficient 
+
+## App Mockup & Design
+
+- Created By Dev Adnani In [Figma](https://www.figma.com/file/T0YBxhc6GHcNDLRgLM9VuT/Password-Gen-App-Design?node-id=0%3A1)  
+</br> 
+  <img align="center" alt="Password_Generator"  src="https://i.imgur.com/5B6hTh5.png">  
 
 -  The App Theme Is Based On Google Material Design Theme (Dark)
 
@@ -51,8 +58,6 @@ These programs produce complex/strong passwords with combinations of numbers, up
     
 - Font Used In App [Louis George Café](https://www.dafont.com/louis-george-caf.font)
 
-- The App Uses Fragment & Tab Layout So UI Is Smooth & Efficient 
-
 
 ##  Code Inspector Review
 
@@ -63,7 +68,7 @@ These programs produce complex/strong passwords with combinations of numbers, up
 
 ## :zap: Screenshots
 
-  <img align="left" alt="Password_Generator"  src="https://imgur.com/skLTuiV.png">
+  <img align="left" alt="Password_Generator"  src="https://i.imgur.com/qHGN6er.png">
   <img align="left" alt="Password_Generator"  src="https://imgur.com/CtKFnPM.png">
   <img align="left" alt="Password_Generator"  src="https://imgur.com/rr6UAd4.png">
   <img align="left" alt="Password_Generator"  src="https://imgur.com/I5MSH3m.png">
