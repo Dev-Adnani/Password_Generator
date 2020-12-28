@@ -24,9 +24,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_pass_title"
         android:layout_centerHorizontal="true"
+        android:gravity="center"
         android:layout_marginTop="20dp"
+        android:drawablePadding="10dp"
         android:fontFamily="@font/louis_george_bold"
         android:text="@string/random_pass"
+        app:drawableEndCompat="@drawable/ic_baseline"
         android:textColor="@color/red"
         android:textSize="32sp" />
 
